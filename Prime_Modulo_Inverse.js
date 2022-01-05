@@ -1,0 +1,1 @@
+function solve(A, B) {}
