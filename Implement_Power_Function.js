@@ -1,20 +1,22 @@
 function power(A, B, C) {
-  if (A == 0) {
-    return 0;
+  if (A == 0 || A == 1) {
+    return A;
   } else if (B == 0) {
     return 1;
   }
-
-  var ans = 0;
-  ans = power(A, B / 2, C) % C;
+  ans = power(A, B / 2, C);
   if (B % 2 == 0) {
-    return ((ans % C) * (ans % C)) % C;
+    result = ((ans % C) * (ans % C)) % C;
   } else {
-    return (((ans % C) * (ans % C) * A) % C) % C;
+    result = (((((ans % C) * ans) % C) * A) % C) % C;
   }
+  if (result < 0) {
+    result += C;
+  }
+  return result;
 }
 
-A = -1;
-B = 1;
-C = 20;
+A = 71045970;
+B = 41535484;
+C = 64735492;
 console.log(power(A, B, C));

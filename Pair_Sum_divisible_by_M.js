@@ -7,7 +7,6 @@ function solve(A, B) {
     obj[(A[i] + A[j]) % B] = obj[(A[i] + A[j]) % B]
       ? obj[(A[i] + A[j]) % B] + 1
       : 1;
-
     i++;
     j--;
   }
