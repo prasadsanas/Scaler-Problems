@@ -1,19 +1,18 @@
 function power(A, B, C) {
-  if (A == 0 || A == 1) {
-    return A;
-  } else if (B == 0) {
-    return 1;
+  if (B == 0) {
+    return 1 % C;
   }
-  ans = power(A, B / 2, C);
+  if (B == 1) {
+    return ((A % C) + C) % C;
+  }
+  var ans = BigInt(power(A, B / 2, C));
   if (B % 2 == 0) {
-    result = ((ans % C) * (ans % C)) % C;
+    var result = BigInt((ans * ans) % C);
+    return result;
   } else {
-    result = (((((ans % C) * ans) % C) * A) % C) % C;
+    var result = BigInt((((ans * ans) % C) * A) % C);
+    return result;
   }
-  if (result < 0) {
-    result += C;
-  }
-  return result;
 }
 
 A = 71045970;
