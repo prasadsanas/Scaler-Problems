@@ -5,6 +5,7 @@ function leftRoatation(A, B) {
     for (var j = 0; j < B[i]; j++) {
       arr.push(arr.shift());
     }
+    output.push(arr);
   }
   return output;
 }
