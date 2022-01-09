@@ -18,6 +18,19 @@ function readLine() {
 function runProgram(input) {
   // Write code here
   input = input.trim().split("\n");
+  let vowel_count = 0;
+  for (var i = 0; i < input[0].length; i++) {
+    if (
+      input[0][i] == "a" ||
+      input[0][i] == "e" ||
+      input[0][i] == "i" ||
+      input[0][i] == "o" ||
+      input[0][i] == "u"
+    ) {
+      vowel_count++;
+    }
+  }
+  console.log(input[0].length - vowel_count);
 }
 
 if (process.env.USER === "prasadsanas") {
