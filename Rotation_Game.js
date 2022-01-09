@@ -5,11 +5,16 @@ function runProgram(input) {
   var A = input[0].trim().split(" ").map(Number);
   var B = input[1];
   A.shift();
+  // console.log(A, B);
+  for (var i = 0; i < B - 1; i++) {
+    A.push(A.shift());
+  }
+  console.log(A.join(" "));
 }
 
 if (process.env.USER === "prasadsanas") {
-  runProgram(`5 1 2 3 4
-  2`);
+  runProgram(`5 1 2 3 4 5
+  3`);
 } else {
   process.stdin.resume();
   process.stdin.setEncoding("ascii");
