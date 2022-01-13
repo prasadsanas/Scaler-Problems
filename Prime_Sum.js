@@ -32,33 +32,5 @@ function solve(A) {
   }
 }
 
-A = 16777214;
+A = 10;
 console.log(solve(A));
-
-// const maxn = 2e7 + 10;
-
-// let done = false;
-
-// let prime = new Array(maxn).fill(1);
-
-// module.exports = {
-//   primesum: function (A) {
-//     if (!done) {
-//       for (let i = 2; i < maxn; i++) {
-//         if (!prime[i]) continue;
-
-//         for (let j = i * i; j < maxn; j += i) {
-//           prime[j] = 0;
-//         }
-//       }
-
-//       done = true;
-//     }
-
-//     for (let i = 2; i <= A; i++) {
-//       if (prime[i] && prime[A - i]) {
-//         return [i, A - i];
-//       }
-//     }
-//   },
-// };

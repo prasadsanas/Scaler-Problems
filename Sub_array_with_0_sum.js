@@ -18,3 +18,6 @@ function SubarraySum(A) {
   }
   return 0;
 }
+
+A = [-1, 1];
+console.log(SubarraySum(A));

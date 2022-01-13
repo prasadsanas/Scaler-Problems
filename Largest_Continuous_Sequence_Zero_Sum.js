@@ -7,7 +7,10 @@ function lszero(A) {
   console.log(prefix_array);
   var obj = {};
   for (var i = 0; i < prefix_array.length; i++) {
-    obj[prefix_array[i]] = obj[prefix_array[i]] ? i : i;
+    obj[prefix_array[i]] = obj[prefix_array[i]]
+      ? Math.max(i, obj[prefix_array[i]])
+      : i;
+    console.log(obj);
   }
   return obj;
 }

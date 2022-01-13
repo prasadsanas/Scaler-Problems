@@ -11,10 +11,11 @@ function sum(A) {
     for (var j = i; j < A.length; j++) {
       ans = ans + A[j];
     }
+    console.log(A[i], ans);
   }
   return ans;
 }
 
-A = [2, 1, 3];
+A = [7, 8, 9, 10];
 
 console.log(sum(A));
