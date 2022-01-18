@@ -1,5 +1,5 @@
 function solve(A) {
-  tower(A, 1, 2, 3);
+  return tower(A, 1, 2, 3);
 }
 
 function tower(A, src, temp, dest) {
@@ -13,5 +13,5 @@ function tower(A, src, temp, dest) {
   tower(A - 1, temp, src, dest);
 }
 
-A = 4;
+A = 2;
 solve(A);
