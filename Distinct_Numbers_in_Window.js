@@ -5,13 +5,12 @@ function Distinct(A, B) {
     obj[A[i]] = obj[A[i]] ? obj[A[i]] + 1 : 1;
   }
   output.push(Object.keys(obj).length);
-  //   return obj;
 
   for (var i = B; i < A.length; i++) {
     obj[A[i]] = obj[A[i]] ? obj[A[i]] + 1 : 1;
     obj[A[i - B]] = obj[A[i - B]] - 1;
+
     if (obj[A[i - B]] == "0") {
-      //   console.log(A[i - B]);
       delete obj[A[i - B]];
     }
 
