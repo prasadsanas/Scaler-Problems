@@ -1,17 +1,20 @@
 function solve(A) {
-  let count = 0;
-  for (var i = 1; i <= A; i++) {
-    let n = 0;
-    while (n < 32) {
-      if (i >> n % 2 == 1) {
-        count++;
-        console.log(i >> n, i, count);
-      }
-      n++;
-    }
+  let mod = 1000000007;
+  let total_count = 0;
+  for (let i = 1; i <= A; i++) {
+    total_count += countSetBit(i);
   }
-  return count % 1000000007;
+  return total_count % mod;
 }
 
-A = 3;
+function countSetBit(x) {
+  let count = 0;
+  while (x) {
+    count += x & 1;
+    x >>= 1;
+  }
+  return count;
+}
+
+A = 4;
 console.log(solve(A));

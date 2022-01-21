@@ -46,5 +46,5 @@ function longest(Arr) {
   return max_length;
 }
 
-Arr = "01";
-console.log(longest(Arr));
+A = "111000";
+console.log(longest(A));

@@ -9,7 +9,7 @@ function Distinct(A, B) {
   for (var i = B; i < A.length; i++) {
     obj[A[i]] = obj[A[i]] ? obj[A[i]] + 1 : 1;
     obj[A[i - B]] = obj[A[i - B]] - 1;
-
+    console.log(obj);
     if (obj[A[i - B]] == "0") {
       delete obj[A[i - B]];
     }
