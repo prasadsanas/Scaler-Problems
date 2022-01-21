@@ -1,6 +1,5 @@
 function solve(A, B) {
   var obj = {};
-
   let i = 0;
   let j = A.length - 1;
   while (i < j) {
@@ -10,9 +9,8 @@ function solve(A, B) {
     i++;
     j--;
   }
-  return obj;
+  return obj[0];
 }
-
 A = [1, 2, 3, 4, 5];
 B = 2;
 console.log(solve(A, B));
