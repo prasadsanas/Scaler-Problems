@@ -1,23 +1,21 @@
 function solve(A) {
-  let alphabet = "abcdefghijklmnopqrstuvwxyz";
-  let sum_arr = [];
-  for (let i = 0; i < A.length; i++) {
-    let sum = 0;
-    for (let j = 0; j < A[i].length; j++) {
-      let index = alphabet.indexOf(A[i][j]) + 1;
-      sum += index;
-    }
-    sum_arr.push(sum);
+  var x = {};
+  for (var i = 0; i < A.length; i++) {
+    A[i] = A[i].split("").sort().join("");
   }
-  let obj = {};
-  for (let i = 0; i < sum_arr.length; i++) {
-    if (!obj[sum_arr[i]]) {
-      obj[sum_arr[i]] = i + 1;
-    } else {
-      obj[sum_arr[i]] = i + 1;
+  var ans = [];
+  for (var i = 0; i < A.length; i++) {
+    var temp = [i + 1];
+    for (var j = i + 1; j < A.length; j++) {
+      if (A[i] == A[j]) {
+        temp.push(j + 1);
+        A[j] = "";
+      }
     }
+    if (A[i] != "") ans.push(temp);
   }
-  return obj;
+
+  return ans;
 }
 
 A = ["cat", "dog", "god", "tca"];

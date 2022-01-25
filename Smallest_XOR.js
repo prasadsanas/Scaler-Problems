@@ -1,16 +1,25 @@
 function solve(A, B) {
-  return countSetBit(B);
+  let set_A = countSetBit(A);
+  let set_B = countSetBit(B);
+  console.log(set_A, set_B);
+  // let n = 1;
+  // while (n < A * B) {
+  //   let m = A ^ n;
+  //   if (B == countSetBit(m)) {
+  //     return m;
+  //   }
+  //   n++;
+  // }
 }
 
-function countSetBit(n) {
+function countSetBit(x) {
   let count = 0;
-  while (n > 0) {
-    count += (n >> 1) & 1;
-    n = n >> 1;
+  while (x) {
+    count += x & 1;
+    x >>= 1;
   }
   return count;
 }
-
 A = 3;
 B = 3;
 console.log(solve(A, B));
