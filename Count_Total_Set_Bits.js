@@ -16,5 +16,5 @@ function countSetBit(x) {
   return count;
 }
 
-A = 4;
+A = 1000000000;
 console.log(solve(A));
